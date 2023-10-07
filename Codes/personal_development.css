@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation bar styles (no changes) */
+
+nav {
+    font-family: 'Baloo', cursive, Arial, Helvetica, sans-serif;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    z-index: 2;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+/* SVG wave (no changes) */
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+/* Header styles (centered and adjusted padding) */
+
+header {
+    font-family: 'Baloo', cursive, Arial, Helvetica, sans-serif;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    padding: 20px 0; /* Adjusted padding for better alignment */
+    position: relative;
+    z-index: 2;
+}
+
+/* Body styles (background color and font) */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    font-size: 16px; /* Increased font size for readability */
+    line-height: 1.6; /* Improved line height for readability */
+}
+
+/* Section styles (centered content and adjusted margin) */
+
+section {
+    background-color: #e74c3c;
+    padding: 20px;
+    margin: 20px auto; /* Centered the sections horizontally */
+    margin-top: 95px; /* Reduced top margin for better alignment */
+    max-width: 810px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* Hover effect to change background color and scale (adjusted color) */
+
+section:hover {
+    background-color: #ff6b6b; /* Adjusted hover color for a creative look */
+    transform: scale(1.03);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    color: white;
+}
+
+/* Content styles (adjusted text color and margin) */
+
+section p {
+    color: #000000; /* Improved text color for better readability */
+    margin: 15px 0; /* Reduced margin for better spacing */
+}
+
+/* Heading styles (adjusted border color and margin) */
+
+
+
+/* Speaker styles (adjusted margin) */
+
+.speaker {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px auto; /* Centered the speakers horizontally */
+    position: relative;
+}
+
+/* Image styles (adjusted max-width) */
+
+.speaker img {
+    max-width: 50%; /* Increased image width for better visibility */
+    border-radius: 50%;
+    margin-right: 20px;
+    flex-shrink: 0;
+    float: left;
+    padding: 20px;
+}
+
+/* Text styles (adjusted margin and font size) */
+
+.text {
+    font-family: 'Baloo', cursive, Arial, Helvetica, sans-serif;
+    padding: 10px;
+    text-align: left;
+    flex-grow: 1;
+    margin-left: 20px;
+    font-size: 15px; /* Increased font size for better readability */
+    color: #ffffff; /* Improved text color for better readability */
+}
