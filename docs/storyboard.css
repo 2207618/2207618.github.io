@@ -1,0 +1,120 @@
+/* Reset some default styles */
+* {
+    font-family: 'Baloo', cursive, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Navigation bar styles */
+nav {
+    font-family: 'Baloo', cursive,Arial, Helvetica, sans-serif;
+    background-color: transparent; /* Make the nav background transparent */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative; /* Add position relative to contain its children */
+    z-index: 2; /* Place it above the SVG wave */
+    margin-bottom: 95px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+header {
+    font-family: 'Baloo', cursive,Arial, Helvetica, sans-serif;
+    background-color: transparent; /* Make the header background transparent */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative; /* Add position relative to contain its children */
+    z-index: 2; /* Place it above the SVG wave */
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background-color:#EB5CE5;
+    padding: 20px;
+    margin: 20px auto; /* Centered the sections horizontally */
+    margin-top: 50px; /* Reduced top margin for better alignment */
+    max-width: 810px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+section:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+li {
+    margin: 10px 0;
+}
+a {
+    color: white; /* Set the link color to white */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Add a transition for color change */
+}
+
+a:hover {
+    color: #40d5dc; /* Change link color on hover */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+img {
+    max-width: 200px; /* Increase max-width for larger images */
+    max-height: 200px; /* Increase max-height for larger images */
+    transition: transform 0.3s ease; /* Add a creative transition on images */
+}
+
+img:hover {
+    transform: scale(3); /* Enlarge the image on hover */
+}
