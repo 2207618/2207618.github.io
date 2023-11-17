@@ -1,80 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2207618</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo&display=swap" rel="stylesheet">
+    <title>Multiplication Game</title>
+    <link rel="stylesheet" href="main.css">
+
 </head>
-<body>
-    <!-- Add the SVG wave background here -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#2FF3DC  " fill-opacity="1" d="M0,64L60,80C120,96,240,128,360,122.7C480,117,600,75,720,101.3C840,128,960,224,1080,229.3C1200,235,1320,149,1380,106.7L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
-    </svg>
-<header>
-    <div class="header-content">
-        <h1>Individual Assignment</h1>
-    </div>
-</header>
-
 
 <body>
-    <div class="columns">
-        <div class="myimage">
-            <a href="mailto:areebaz2004@gmail.com?subject=What%20do%20you%20think%20about%20my%20website?">
-                <img src="/Assets/PD.jpg" alt="My image">
-            </a>
-            <div class="text">
-                Hi, I'm Areeba Zafar, and this website is a part of my web programming assignment. Here, you can learn more about me, my interests, and my journey in the world of web development. I'm passionate about creating innovative web solutions and excited to share my experiences with you.<br>
-                Enjoy!
-            </div>
-        </div>
-        <div class="container">
-            <div class="column">
-                <a href="personality.html">
-                    <img src="/Assets/Personality.jpg" alt="personality">
-                </a>
-                <div class="text text-personality">
-                    Personality
-                </div>
-            </div>
-            <div class="column">
-                <a href="personal_development.html">
-                    <img src="/Assets/PD.jpg" alt="PD">
-                </a>
-                <div class="text text-personal-development">
-                    Personal Development
-                </div>
-            </div>
-            <div class="column">
-                <a href="professional.html">
-                    <img src="/Assets/professional.jpg" alt="professional">
-                </a>
-                <div class="text text-professional">
-                    Professional
-                </div>
-            </div>
-            <div class="column">
-                <a href="storyboard.html">
-                    <img src="/Assets/storyboard.png" alt="Storyboard">
-                </a>
-                <div class="text text-storyboard">
-                    Storyboard
-                </div>
-            </div>
-            <div class="column">
-                <a href="references.html">
-                    <img src="/Assets/reference.jpg" alt="References">
-                </a>
-                <div class="text text-references">
-                    References
-                </div>
-            </div>
-        </div>
-        
-    </div>
+    <div id="register-container">
+        <h1>Player Registration</h1>
+        <form id="player-form">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required minlength="3">
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required minlength="3">
+
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" required>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required>
+    <label for="age-out">Age: </label>
+    <input id="age-out" disabled>
     
+    <script>
+        // Get reference to the date of birth input and age output elements
+        const dobInput = document.getElementById('dob');
+        const ageOutput = document.getElementById('age-out');
+
+        // Function to calculate age based on the provided date of birth
+        function calculateAge() {
+            const dobValue = new Date(dobInput.value);
+            const today = new Date();
+            let age = today.getFullYear() - dobValue.getFullYear();
+            const monthDiff = today.getMonth() - dobValue.getMonth();
+
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dobValue.getDate())) {
+                age--;
+            }
+
+            // Display the calculated age in the age output field
+            ageOutput.value = age;
+        }
+
+        // Add an event listener to the date of birth input to trigger age calculation on input
+        dobInput.addEventListener('input', calculateAge);
+    </script>
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">--Select Gender--</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <br> <br>
+            <button type="button" id="register-btn">Register</button>
+        </form>
+    </div>
+
+    <div id="play-area">
+        <h1>Multiplication Game</h1>
+        <button id="start-btn" disabled>Start</button>
+        <button id="end-btn" disabled>End</button>
+
+        <div id="info"></div>
+        <div id="scoreboard">
+            <p>Score: <span id="score"></span></p>
+        </div>
+        <div id="equation-container">
+            <h2>Solve the equation:</h2>
+            <p id="equation"></p>
+        </div>
+        <div id="guess-container">
+            <label for="user-guess">Your Answer:</label>
+            <input type="number" id="user-guess">
+            <button id="accept" disabled>Accept</button>
+            <button id="next-btn" disabled>Next</button>
+        </div>
+        <button id="show" disabled>Show Percentage</button>
+    </div>
+
+    <div id="results-area">
+        <textarea id="showpercentage" rows="10" cols="50" disabled></textarea>
+        <br> <br>
+        <textarea id="showallplayers" rows="10" cols="50" disabled></textarea>
+    </div>
+
+    <div id="showcharts">
+        <div id="gender-chart">
+            <h2>Player Gender Chart</h2>
+            <div id="gender-table"></div>
+        </div>
+        <div id="freq-chart">
+            <h2>Score % Frequency Chart</h2>
+            <div id="freq-table"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
